@@ -9,15 +9,8 @@ namespace ChkShtLst
 
         static Task Main(string[] args)
         {
-            args = new string[2];
-            args[0] = "net";
-            args[1] = "mic";
-
-
             bool foundWord = false;
             var runningDirName = Directory.GetCurrentDirectory();
-
-
             var errorMessage = new System.Text.StringBuilder();
             foreach (var arg in args)
             {
@@ -32,23 +25,16 @@ namespace ChkShtLst
                         errorMessage.Append(fileName);
                         errorMessage.AppendLine();
                         foundWord = true;
-
-
                     }
                     Console.WriteLine(fileName);
                 }
             }
 
-
-
             if (foundWord)
             {
                 Console.Write(errorMessage);
-
-
             }
-
-            Console.ReadLine();
+            Environment.Exit(Convert.ToInt32(foundWord));
             return Task.CompletedTask;
         }
     }
