@@ -14,7 +14,7 @@ namespace ChkShtLst
             var errorMessage = new System.Text.StringBuilder();
             foreach (var arg in args)
             {
-                foreach (var fileName in Directory.GetFiles(runningDirName, "*", SearchOption.AllDirectories))
+                foreach (var fileName in Directory.GetFiles(runningDirName, "*.cs", SearchOption.AllDirectories))
                 {
                     var fileContent = File.ReadAllText(fileName);
 
@@ -26,7 +26,6 @@ namespace ChkShtLst
                         errorMessage.AppendLine();
                         foundWord = true;
                     }
-                    Console.WriteLine(fileName);
                 }
             }
 
