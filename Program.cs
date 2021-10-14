@@ -14,7 +14,7 @@ namespace ChkShtLst
             var errorMessage = new System.Text.StringBuilder();
             foreach (var arg in args)
             {
-                foreach (var fileName in Directory.GetFiles(runningDirName, "*.cs", SearchOption.AllDirectories))
+                foreach (var fileName in Directory.GetFiles(runningDirName, "*", SearchOption.AllDirectories))
                 {
                     var fileContent = File.ReadAllText(fileName);
 
