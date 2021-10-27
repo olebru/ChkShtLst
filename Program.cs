@@ -9,6 +9,11 @@ namespace ChkShtLst
 
         static Task Main(string[] args)
         {
+            Console.WriteLine("Starting, looking for:");
+            foreach (var arg in args)
+	        {
+                Console.WriteLine(arg);
+	        }
             bool foundWord = false;
             var runningDirName = Directory.GetCurrentDirectory();
             var errorMessage = new System.Text.StringBuilder();
@@ -34,6 +39,7 @@ namespace ChkShtLst
                 Console.Write(errorMessage);
             }
             Environment.Exit(Convert.ToInt32(foundWord));
+            Console.WriteLine("Finished");
             return Task.CompletedTask;
         }
     }
