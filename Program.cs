@@ -38,8 +38,8 @@ namespace ChkShtLst
             {
                 Console.Write(errorMessage);
             }
-            Environment.Exit(Convert.ToInt32(foundWord));
             Console.WriteLine("Finished");
+            Environment.Exit(Convert.ToInt32(foundWord));
             return Task.CompletedTask;
         }
     }
