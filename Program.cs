@@ -15,12 +15,9 @@ namespace ChkShtLst
             var errorMessage = new System.Text.StringBuilder();
             foreach (var arg in args)
             {
-                 Console.WriteLine($"Looking for: {arg}");
                 foreach (var fileName in Directory.GetFiles("/inputfolder", "*", SearchOption.AllDirectories))
-                {
-                    Console.WriteLine($"\t in: {fileName}");
+                {        
                     var fileContent = File.ReadAllText(fileName);
-
                     if (fileContent.Contains(arg))
                     {
                         errorMessage.Append(arg);
