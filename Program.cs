@@ -18,7 +18,10 @@ namespace ChkShtLst
                 foreach (var fileName in Directory.GetFiles("/inputfolder", "*", SearchOption.AllDirectories))
                 {        
                     var fileContent = File.ReadAllText(fileName);
-                    if (fileContent.Contains(arg))
+                    if (fileContent.Contains(arg) && 
+                        !fileName.Contains("/.github/workflows/") && 
+                        !fileName.Contains("/inputfolder/_temp/")
+                        )
                     {
                         errorMessage.Append(arg);
                         errorMessage.Append(" found in ");
