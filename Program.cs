@@ -9,18 +9,17 @@ namespace ChkShtLst
 
         static Task Main(string[] args)
         {
-            Console.WriteLine("Starting, looking for:");
-            foreach (var arg in args)
-	        {
-                Console.WriteLine(arg);
-	        }
+            Console.WriteLine("Starting");
+        
             bool foundWord = false;
             var runningDirName = Directory.GetCurrentDirectory();
             var errorMessage = new System.Text.StringBuilder();
             foreach (var arg in args)
             {
+                 Console.WriteLine($"Looking for: {arg}");
                 foreach (var fileName in Directory.GetFiles(runningDirName, "*", SearchOption.AllDirectories))
                 {
+                    Console.WriteLine($"\t in: {fileName}");
                     var fileContent = File.ReadAllText(fileName);
 
                     if (fileContent.Contains(arg))
